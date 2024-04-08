@@ -20,6 +20,6 @@
     pointer-events: none;
 }
 
-#obstacles, #bull, #egg{
+#obstacles, #bull, #egg, #toad{
     display: none;
 }
