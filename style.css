@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Bangers", system-ui;
 }
 #canvas{
     background: url("./game_images/background.png");
@@ -20,6 +21,6 @@
     pointer-events: none;
 }
 
-#obstacles, #bull, #egg, #toad, #larva{
+#obstacles, #bull, #egg, #toad, #toads, #larva{
     display: none;
 }
