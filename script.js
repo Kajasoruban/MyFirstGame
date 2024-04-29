@@ -1,4 +1,13 @@
-window.addEventListener("load",function(){
+
+window.addEventListener('load',()=>{
+  document.getElementById('wrapper').style.display='none';
+  document.getElementById('started').style.display='block';
+  document.getElementById('howto').style.display='block';
+})
+let started= false;
+
+
+    loaded=true;
     const canvas=document.getElementById("canvas");
     const ctx=canvas.getContext("2d");
     canvas.width=1280;
@@ -522,7 +531,7 @@ window.addEventListener("load",function(){
               message2= 'You are Hero';
             }else{
               message1= 'Try again!';
-              message2= `You can't lost more thane or equal 5 hatlings`;
+              message2= `You can't lost more than or equal 5 hatlings`;
             }
             context.font= '130px Bangers';
             context.fillText(message1, this.width * 0.5, this.height * 0.5 - 20);
@@ -612,7 +621,7 @@ window.addEventListener("load",function(){
     }
 
     const game=new Game(canvas);
-    game.init()
+    started && game.init();
   
     let lastTime=0;
     function animate(timeStamp){
@@ -625,6 +634,34 @@ window.addEventListener("load",function(){
 
     }
 
-    animate(0)
+    started && animate(0);
 
-})
+
+let startBtn=document.getElementById('home');
+let canvas2=document.getElementById('canvas2');
+const ctx2=canvas2.getContext("2d");
+let image=document.getElementById("bull");
+let frameX=0;
+let spriteWidth= 255;
+let spriteHeight= 256;
+let spriteX=0;
+let spriteY=-60;
+let width= spriteWidth;
+let height= spriteHeight;
+let interval=0;
+function animate2(timeStamp){
+  
+  if(interval < 59){
+    frameX=interval;
+    interval++ 
+  }else{
+    interval= 0;
+  }
+  ctx2.clearRect(0,0,width,height)
+  ctx2.drawImage(image, frameX * spriteWidth, 3 * spriteHeight, spriteWidth, spriteHeight, spriteX,spriteY,width,height);
+  window.requestAnimationFrame(animate2);
+
+}
+
+animate2(0);
+const start=()=>{started=true;animate(0);game.init();startBtn.style.display='none';};

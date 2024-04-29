@@ -10,9 +10,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    z-index: 1;
+}
+#canvas2{
+  
+  position: absolute;
+ /* border: 1px solid white; */
+ top: 50%;
+ left: 30%;
+ transform: translate(-50%,-50%);
 
 }
-
 #overlay{
     position: absolute;
     top: 50%;
@@ -23,4 +31,163 @@
 
 #obstacles, #bull, #egg, #toad, #toads, #larva{
     display: none;
+}
+
+#home{
+  width: 1280px;
+  height: 720px;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    background: url("./game_images/background.png");
+}
+
+
+
+#home button{
+  font-size: 5rem;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   display: none;
+   background-color: transparent;
+   border: none;
+   color: white;
+}
+
+#home .howto{
+ 
+  position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   display: none;
+   
+   border: none;
+   color: black;
+  
+   
+}
+.title{
+ 
+
+  
+    margin: 50px auto;
+    background: linear-gradient(to right, #00bbff, #071fba, #00ffe1, #021489, #50e8f9, #0080ff, #3a03b0, #018a88); /* Initial gradient colors */
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientAnimation 5s linear infinite; /* Apply gradient animation */
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+#home .howto h2{
+  text-align: center;
+}
+#home .howto p{
+  text-align: justify;
+  font-size: 1.3rem;
+}
+
+.wrapper {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 400px;
+  height: 400px;
+  z-index: 7;
+}
+
+.loader-outer {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  border-bottom: 1px solid #303030;
+  background: #151515;
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 8;
+  .loader-inner {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: -100px;
+    width: auto;
+    height: 58px;
+    color: crimson;
+    text-align: center;
+    text-shadow: 0 0 20px crimson;
+    font-size: 60px;
+    z-index: 9;
+    animation: load 2s infinite linear;
+  }
+}
+
+h1 {
+  position: absolute;
+  margin: auto;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 85px;
+  height: 40px;
+  text-transform: uppercase;
+  text-align: left;
+  text-shadow: 0 0 20px crimson;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  font-weight: lighter;
+  color: crimson;
+  span {
+    display: none;
+  }
+  &::after {
+    animation: txt 1s infinite;
+    content: "";
+  }
+}
+
+@keyframes load {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 220px;
+  }
+}
+
+@keyframes txt {
+  0% {
+    content: "LOADING";
+  }
+  35% {
+    content: "LOADING.";
+  }
+  65% {
+    content: "LOADING..";
+  }
+  100% {
+    content: "LOADING...";
+  }
 }

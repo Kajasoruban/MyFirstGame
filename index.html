@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -21,8 +23,38 @@
     <img id="toad" src="./game_images/toad.png" alt="">
     <img id="toads" src="./game_images/toads.png" alt="">
     <img id="larva" src="./game_images/larva.png" alt="">
+
     
 
+    <div id="home">
+        
+        <div class="wrapper" id="wrapper">
+            <div class="loader-outer">
+              <div class="loader-inner">
+                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+              </div>
+            </div>
+            <h1><span>LOADING</span></h1>
+        </div>
+        <canvas id="canvas2"></canvas>
+        <button onclick="start()" id="started"><p class="title">Start</p></button>
+        
+        <div class="howto" id="howto">
+            
+           <h2> instructions </h2>
+           <br/>
+           <p>You are the blue monster and periodically eggs will be spawn around you.
+            also enemies will be apear. Once egg spawned it will hatch into larva after 10 s .
+            Eggs can be move away by enemies but if it's in larva form it will be eaten by enemy.
+            So you have to protect eggs and larva from enemy by move eggs and larva to bushes in top to get scores.
+            you have to score 30 to finish game but if you lost 5 larva you will be lost even if you scored 30.
+            You can move the monster by drag it with curser or click anywhere in game.
+           </p><br/>
+           <h2>*click 'd' while playing to apply debug mode*</h2>
+        </div>
+    </div>
+    
+    <!-- <div class="loader"id="loader"></div> -->
 
     <script src="script.js"></script>
 </body>
